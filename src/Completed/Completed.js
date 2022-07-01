@@ -1,4 +1,5 @@
 import React from 'react';
+import useTasks from '../hooks/useTasks';
 
 const Completed = () => {
     return (
