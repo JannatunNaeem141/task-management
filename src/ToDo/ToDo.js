@@ -11,8 +11,20 @@ const ToDo = () => {
 
     const handleComplete = (task) => {
         console.log(task);
-        const newComplete = [...complete, task];
-        setComplete(newComplete);
+        // const newComplete = [...complete, task];
+        // setComplete(newComplete);
+        // const url = `http://localhost:5000/complete`;
+        // fetch(url, {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(task)
+        // })
+        //     .then(res => res.json())
+        //     .then(result => {
+        //         console.log(result);
+        //     })
     }
 
     const onSubmit = data => {
