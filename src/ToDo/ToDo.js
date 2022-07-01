@@ -1,23 +1,40 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+// import Datas from '../../public/tasks.json';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import Task from '../Tasks/Task';
 
 const ToDo = () => {
     const { register, handleSubmit } = useForm();
+    const [tasks, setTasks] = useState([]);
+    const [complete, setComplete] = useState([]);
+
+    useEffect(() => {
+        fetch('tasks.json')
+            .then(res => res.json())
+            .then(data => setTasks(data))
+    }, [])
+
+    const handleComplete = (task) => {
+        console.log(task);
+        const newComplete = [...complete, task];
+        setComplete(newComplete);
+    }
 
     const onSubmit = data => {
-        const url = `http://localhost:5000/task`;
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log(result);
-            })
+        // const url = `http://localhost:5000/task`;
+        // fetch(url, {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(data)
+        // })
+        //     .then(res => res.json())
+        //     .then(result => {
+        //         console.log(result);
+        //     })
     };
 
     return (
@@ -32,7 +49,13 @@ const ToDo = () => {
                 </form>
             </div>
             <div className="all-tasks">
-                <Task></Task>
+                {
+                    tasks.map(task => <Task
+                        key={task._id}
+                        task={task}
+                        handleComplete={handleComplete}
+                    ></Task>)
+                }
             </div>
         </div>
     );

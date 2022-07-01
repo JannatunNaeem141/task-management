@@ -4,16 +4,16 @@ import { useState } from 'react';
 import Task from './Task';
 
 const Tasks = () => {
-    const [tasks, setTasks] = useState([]);
+    // const [tasks, setTasks] = useState([]);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/task')
-            .then(res => res.json())
-            .then(data => setTasks(data))
-    }, [])
+    // useEffect(() => {
+    //     fetch('tasks.json')
+    //         .then(res => res.json())
+    //         .then(data => setTasks(data))
+    // }, [])
     return (
         <div>
-            <h2 className='tasks-title'>All Products</h2>
+            {/* <h2 className='tasks-title'>All Products</h2>
             <div className='all-tasks'>
                 {
                     tasks.map(task => <Task
@@ -21,8 +21,7 @@ const Tasks = () => {
                         task={task}
                     ></Task>)
                 }
-            </div>
-
+            </div> */}
         </div>
     );
 };
