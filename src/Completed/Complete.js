@@ -13,16 +13,15 @@ const Complete = ({ complete }) => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    // const remaining = tasks.filter(task => task._id !== id);
-                    // setTasks(remaining);
+                    window.location.reload();
                 })
         }
     }
 
     return (
-        <div className='flex'>
+        <div className='flex bg-gray-700 mb-2 rounded-md lg:py-3 md:py-2 py-1 px-3 text-white justify-between'>
             <p>{name}</p>
-            <button className='btn btn-primary p-0 mx-5' onClick={() => handleDelete(complete._id)}>Delete</button>
+            <button className='text-red-400' onClick={() => handleDelete(complete._id)}>Delete</button>
         </div>
     );
 };

@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import ToDo from './ToDo/ToDo';
 import Completed from './Completed/Completed';
 import Calender from './Calender/Calender';
+import Footer from './Shared/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/completed' element={<Completed></Completed>}></Route>
         <Route path='/calender' element={<Calender></Calender>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }
