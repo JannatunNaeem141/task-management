@@ -11,7 +11,7 @@ const ToDo = () => {
 
     const handleComplete = task => {
         console.log(task);
-        const url = `http://localhost:5000/complete`;
+        const url = `https://true-toque-74988.herokuapp.com/complete`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -27,7 +27,7 @@ const ToDo = () => {
 
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:5000/task`;
+        const url = `https://true-toque-74988.herokuapp.com/task`;
         fetch(url, {
             method: 'POST',
             headers: {

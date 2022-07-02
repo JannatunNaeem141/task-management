@@ -8,7 +8,7 @@ const Task = ({ task, handleComplete }) => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/task/${id}`;
+            const url = `https://true-toque-74988.herokuapp.com/task/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -28,8 +28,9 @@ const Task = ({ task, handleComplete }) => {
                 <p>{name}</p>
             </div>
             <div>
-                <button className='text-green-400 mx-5' onClick={() => handleComplete(task.name)}>Complete</button>
-                <button className='text-red-400' onClick={() => handleDelete(task._id)}>Delete</button>
+                <button title="Complete" className='text-green-400 mx-5' onClick={() => handleComplete(task.name)}><i class="fa-solid fa-check"></i></button>
+                <button title="Edit"><i className="fa-solid fa-pen-to-square mr-5" style={{ color: "#F2E7FE" }}></i></button>
+                <button title="Delete" className='text-red-400' onClick={() => handleDelete(task._id)}><i class="fa-solid fa-trash-can"></i></button>
             </div>
         </div>
     );
